@@ -26,6 +26,7 @@ public class CustomTextField: UIView {
         tf.clearButtonMode = .whileEditing
         tf.font = UIFont.systemFont(ofSize: 14)
         tf.delegate = self
+        tf.autocorrectionType = .no
         return tf
     }()
 
@@ -59,6 +60,8 @@ public class CustomTextField: UIView {
     // Callbacks
     public var onCameraTap: (() -> Void)?
     public var onCalendarTap: (() -> Void)?
+    /// Called when editing ends. For `idCard` the passed string is the raw digits (no masking).
+    public var onEndEditing: ((String) -> Void)?
 
     private let dateFormatter: DateFormatter = {
         let df = DateFormatter()
@@ -131,7 +134,7 @@ public class CustomTextField: UIView {
             textField.addTarget(self, action: #selector(phoneTextChanged), for: .editingChanged)
 
         case .idCard:
-            textField.keyboardType = .default
+            textField.keyboardType = .numberPad
             rightButton.isHidden = false
             let image = UIImage(systemName: "camera")
             rightButton.setImage(image, for: .normal)
@@ -146,9 +149,31 @@ public class CustomTextField: UIView {
             setupDatePicker()
         }
     }
+    public func isValid() -> Bool {
+        // If idCard, require exactly 8 or 16 digits
+        switch type {
+        case .idCard:
+            let digits = digitsOnly
+            return digits.count == 8 || digits.count == 16
+        default:
+            return !value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        }
+    }
+
+    // Helper: digits-only representation of the current text
+    // For idCard we keep a separate raw storage because the displayed text is masked
+    private var rawIDDigits: String = ""
+
+    private var digitsOnly: String {
+        if type == .idCard {
+            return rawIDDigits
+        }
+        return textField.text?.filter { $0.isWholeNumber } ?? ""
+    }
 
     // Public getter for current text
     public var value: String {
+        // For idCard return the masked display (textField) but provide raw via `digitsOnly` if needed
         return textField.text ?? ""
     }
 
@@ -241,7 +266,127 @@ extension CustomTextField: UITextFieldDelegate {
             // Allow only digits
             return string.allSatisfy { $0.isWholeNumber }
         }
+
+        // For idCard: only digits, maximum 16 digits while typing. Validation (exact 8 or 16) done in isValid().
+        if type == .idCard {
+            // We'll manage the text ourselves so we can mask it (show only last 4 digits)
+            // Allow deletion (replacement string empty) and digits only
+            if !string.isEmpty && !string.allSatisfy({ $0.isWholeNumber }) {
+                return false
+            }
+
+            let currentDisplay = textField.text ?? ""
+            let ns = currentDisplay as NSString
+
+            // Count number of digit-positions (including masked '*' as digits) before the edit range
+            let prefix = ns.substring(to: range.location)
+            let digitsBefore = prefix.filter { $0 != " " }.count
+
+            // Count digits being replaced in the selected range
+            let rangeSubstring = ns.substring(with: range)
+            let digitsInRange = rangeSubstring.filter { $0 != " " }.count
+
+            // Build the new raw digits string
+            let insertedDigits = string.filter { $0.isWholeNumber }
+            var newRaw = rawIDDigits
+
+            // Ensure digitsBefore is within bounds
+            let idx = min(max(0, digitsBefore), newRaw.count)
+
+            // Remove the digitsInRange at idx
+            if digitsInRange > 0 {
+                let startIdx = newRaw.index(newRaw.startIndex, offsetBy: idx)
+                let endRemoval = newRaw.index(startIdx, offsetBy: min(digitsInRange, newRaw.distance(from: startIdx, to: newRaw.endIndex)))
+                newRaw.replaceSubrange(startIdx..<endRemoval, with: "")
+            }
+
+            // Insert the insertedDigits at idx (but cap to 16)
+            let allowedToInsert = String(insertedDigits.prefix(16 - newRaw.count))
+            if !allowedToInsert.isEmpty {
+                let insertIdx = newRaw.index(newRaw.startIndex, offsetBy: idx)
+                newRaw.replaceSubrange(insertIdx..<insertIdx, with: allowedToInsert)
+            }
+
+            // Trim to max 16
+            if newRaw.count > 16 {
+                newRaw = String(newRaw.prefix(16))
+            }
+
+            // Save and update display
+            rawIDDigits = newRaw
+            let masked = maskIDString(from: rawIDDigits)
+            textField.text = masked
+
+            // Move caret to sensible position: after the inserted chunk
+            let caretDigitPosition = min(idx + insertedDigits.count, rawIDDigits.count)
+            if let newPosition = displayPosition(forDigitIndex: caretDigitPosition, in: masked) {
+                textField.selectedTextRange = textField.textRange(from: newPosition, to: newPosition)
+            }
+
+            // We updated the text programmatically
+            return false
+        }
         return true
+    }
+
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        // Provide the final value via closure. For idCard return the raw digits (no mask), otherwise return visible text.
+        let final: String
+        if type == .idCard {
+            final = rawIDDigits
+        } else {
+            final = textField.text ?? ""
+        }
+        onEndEditing?(final)
+    }
+}
+
+// MARK: - ID masking helpers
+extension CustomTextField {
+    private func maskIDString(from digits: String) -> String {
+        // Show only last 4 digits, mask the rest with '*', group in blocks of 4 separated by spaces
+        let count = digits.count
+        if count <= 4 {
+            return groupDigits(digits)
+        }
+
+        let chars = Array(digits)
+        var maskedChars: [Character] = []
+        for i in 0..<count {
+            if i < count - 4 {
+                maskedChars.append("*")
+            } else {
+                maskedChars.append(chars[i])
+            }
+        }
+        return groupDigits(String(maskedChars))
+    }
+
+    private func groupDigits(_ text: String) -> String {
+        // Insert space every 4 characters
+        let digits = text.filter { $0 != " " }
+        var out = ""
+        for (i, ch) in digits.enumerated() {
+            if i > 0 && i % 4 == 0 { out.append(" ") }
+            out.append(ch)
+        }
+        return out
+    }
+
+    private func displayPosition(forDigitIndex digitIndex: Int, in displayText: String) -> UITextPosition? {
+        // Map digit index (0..n) to position in displayText accounting for spaces
+        var digitsSeen = 0
+        for (i, ch) in displayText.enumerated() {
+            if ch != " " {
+                if digitsSeen == digitIndex {
+                    // position at i
+                    return textField.position(from: textField.beginningOfDocument, offset: i)
+                }
+                digitsSeen += 1
+            }
+        }
+        // If at end
+        return textField.position(from: textField.beginningOfDocument, offset: displayText.count)
     }
 }
 
