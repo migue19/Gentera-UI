@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B0BE1A232EE0CA8700BED0D8 /* Gentera_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BE1A172EE0CA8700BED0D8 /* Gentera_UI.framework */; };
+		F25EA2A42EE395B400B5F21B /* Gentera-UI.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F25EA2A32EE395B400B5F21B /* Gentera-UI.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		B0BE1A172EE0CA8700BED0D8 /* Gentera_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gentera_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BE1A222EE0CA8700BED0D8 /* Gentera-UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gentera-UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F25EA2A32EE395B400B5F21B /* Gentera-UI.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Gentera-UI.podspec"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -60,6 +62,7 @@
 		B0BE1A0D2EE0CA8700BED0D8 = {
 			isa = PBXGroup;
 			children = (
+				F25EA2A32EE395B400B5F21B /* Gentera-UI.podspec */,
 				B0BE1A192EE0CA8700BED0D8 /* Gentera-UI */,
 				B0BE1A262EE0CA8700BED0D8 /* Gentera-UITests */,
 				B0BE1A182EE0CA8700BED0D8 /* Products */,
@@ -177,6 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F25EA2A42EE395B400B5F21B /* Gentera-UI.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

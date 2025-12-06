@@ -7,15 +7,15 @@
 
 import UIKit
 import SwiftUI
-enum CustomLabelStyle {
+public enum CustomLabelStyle {
     case title
     case subtitle
 }
 
-class CustomLabel: UILabel {
+public class CustomLabel: UILabel {
     let style: CustomLabelStyle
     
-    init(text: String, style: CustomLabelStyle) {
+    public init(text: String, style: CustomLabelStyle) {
         self.style = style
         super.init(frame: .zero)
         
