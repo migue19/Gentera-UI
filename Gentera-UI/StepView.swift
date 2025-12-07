@@ -35,7 +35,7 @@ public class StepView: UIView {
     }()
 
     // Config
-    public var progressHeight: CGFloat = 16 {
+    public var progressHeight: CGFloat = 8 {
         didSet { progress.heightAnchor.constraint(equalToConstant: progressHeight).isActive = true }
     }
 
@@ -55,7 +55,7 @@ public class StepView: UIView {
         // Progress defaults
         progress.trackTintColor = UIColor(white: 0.93, alpha: 1)
         // progress.progressTintColor left as default or caller can set it
-        progressHeight = 16
+        progressHeight = 8
 
         // Stack: vertical (progress above, label below)
         addSubview(stack)
