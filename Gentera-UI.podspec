@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
 
   # Incluye todos los archivos Swift del módulo
   s.source_files = 'Gentera-UI/**/*.swift'
+  s.dependency 'lottie-ios'
 
   s.requires_arc = true
 end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23AE91D342D7EFE36ECAEBD9 /* Pods_Gentera_UI_Gentera_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712ED1A33CC70AC268B9C31B /* Pods_Gentera_UI_Gentera_UITests.framework */; };
+		7B869940A2F50B3EC4227DB9 /* Pods_Gentera_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0617EC7037A101DE947DD6C /* Pods_Gentera_UI.framework */; };
 		B0BE1A232EE0CA8700BED0D8 /* Gentera_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BE1A172EE0CA8700BED0D8 /* Gentera_UI.framework */; };
 		F25EA2A42EE395B400B5F21B /* Gentera-UI.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F25EA2A32EE395B400B5F21B /* Gentera-UI.podspec */; };
 		F2E4BBBA2EE629CF00BEDC7C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F2E4BBB92EE629CF00BEDC7C /* LICENSE */; };
@@ -23,8 +25,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C18C7D3B84D5D02D19FEBC4 /* Pods-Gentera-UI-Gentera-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gentera-UI-Gentera-UITests.debug.xcconfig"; path = "Target Support Files/Pods-Gentera-UI-Gentera-UITests/Pods-Gentera-UI-Gentera-UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4D048803BFD2D2D46114BA1D /* Pods-Gentera-UI-Gentera-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gentera-UI-Gentera-UITests.release.xcconfig"; path = "Target Support Files/Pods-Gentera-UI-Gentera-UITests/Pods-Gentera-UI-Gentera-UITests.release.xcconfig"; sourceTree = "<group>"; };
+		712ED1A33CC70AC268B9C31B /* Pods_Gentera_UI_Gentera_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gentera_UI_Gentera_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99C3F6A264E902FB6E2AB01B /* Pods-Gentera-UI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gentera-UI.release.xcconfig"; path = "Target Support Files/Pods-Gentera-UI/Pods-Gentera-UI.release.xcconfig"; sourceTree = "<group>"; };
 		B0BE1A172EE0CA8700BED0D8 /* Gentera_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gentera_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BE1A222EE0CA8700BED0D8 /* Gentera-UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gentera-UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D620E99D0F2BE69EE6928048 /* Pods-Gentera-UI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gentera-UI.debug.xcconfig"; path = "Target Support Files/Pods-Gentera-UI/Pods-Gentera-UI.debug.xcconfig"; sourceTree = "<group>"; };
+		E0617EC7037A101DE947DD6C /* Pods_Gentera_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gentera_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25EA2A32EE395B400B5F21B /* Gentera-UI.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Gentera-UI.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F2E4BBB92EE629CF00BEDC7C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B869940A2F50B3EC4227DB9 /* Pods_Gentera_UI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,12 +64,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0BE1A232EE0CA8700BED0D8 /* Gentera_UI.framework in Frameworks */,
+				23AE91D342D7EFE36ECAEBD9 /* Pods_Gentera_UI_Gentera_UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		546F4E05E99EA7E8CE6952D1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D620E99D0F2BE69EE6928048 /* Pods-Gentera-UI.debug.xcconfig */,
+				99C3F6A264E902FB6E2AB01B /* Pods-Gentera-UI.release.xcconfig */,
+				2C18C7D3B84D5D02D19FEBC4 /* Pods-Gentera-UI-Gentera-UITests.debug.xcconfig */,
+				4D048803BFD2D2D46114BA1D /* Pods-Gentera-UI-Gentera-UITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		999E192C377B6BCA33278F64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0617EC7037A101DE947DD6C /* Pods_Gentera_UI.framework */,
+				712ED1A33CC70AC268B9C31B /* Pods_Gentera_UI_Gentera_UITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B0BE1A0D2EE0CA8700BED0D8 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +99,8 @@
 				B0BE1A192EE0CA8700BED0D8 /* Gentera-UI */,
 				B0BE1A262EE0CA8700BED0D8 /* Gentera-UITests */,
 				B0BE1A182EE0CA8700BED0D8 /* Products */,
+				546F4E05E99EA7E8CE6952D1 /* Pods */,
+				999E192C377B6BCA33278F64 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +130,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0BE1A2B2EE0CA8700BED0D8 /* Build configuration list for PBXNativeTarget "Gentera-UI" */;
 			buildPhases = (
+				AC2CCBC5D894FE26B85CD21C /* [CP] Check Pods Manifest.lock */,
 				B0BE1A122EE0CA8700BED0D8 /* Headers */,
 				B0BE1A132EE0CA8700BED0D8 /* Sources */,
 				B0BE1A142EE0CA8700BED0D8 /* Frameworks */,
@@ -111,8 +144,6 @@
 				B0BE1A192EE0CA8700BED0D8 /* Gentera-UI */,
 			);
 			name = "Gentera-UI";
-			packageProductDependencies = (
-			);
 			productName = "Gentera-UI";
 			productReference = B0BE1A172EE0CA8700BED0D8 /* Gentera_UI.framework */;
 			productType = "com.apple.product-type.framework";
@@ -121,9 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0BE1A2E2EE0CA8700BED0D8 /* Build configuration list for PBXNativeTarget "Gentera-UITests" */;
 			buildPhases = (
+				1845B2C2BF94E339BE9B17B4 /* [CP] Check Pods Manifest.lock */,
 				B0BE1A1E2EE0CA8700BED0D8 /* Sources */,
 				B0BE1A1F2EE0CA8700BED0D8 /* Frameworks */,
 				B0BE1A202EE0CA8700BED0D8 /* Resources */,
+				C7B379220921D428DA475541 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,8 +167,6 @@
 				B0BE1A262EE0CA8700BED0D8 /* Gentera-UITests */,
 			);
 			name = "Gentera-UITests";
-			packageProductDependencies = (
-			);
 			productName = "Gentera-UITests";
 			productReference = B0BE1A222EE0CA8700BED0D8 /* Gentera-UITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -196,6 +227,74 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1845B2C2BF94E339BE9B17B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gentera-UI-Gentera-UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC2CCBC5D894FE26B85CD21C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gentera-UI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7B379220921D428DA475541 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gentera-UI-Gentera-UITests/Pods-Gentera-UI-Gentera-UITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gentera-UI-Gentera-UITests/Pods-Gentera-UI-Gentera-UITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gentera-UI-Gentera-UITests/Pods-Gentera-UI-Gentera-UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B0BE1A132EE0CA8700BED0D8 /* Sources */ = {
@@ -352,6 +451,7 @@
 		};
 		B0BE1A2C2EE0CA8700BED0D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D620E99D0F2BE69EE6928048 /* Pods-Gentera-UI.debug.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -388,6 +488,7 @@
 		};
 		B0BE1A2D2EE0CA8700BED0D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99C3F6A264E902FB6E2AB01B /* Pods-Gentera-UI.release.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -424,6 +525,7 @@
 		};
 		B0BE1A2F2EE0CA8700BED0D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C18C7D3B84D5D02D19FEBC4 /* Pods-Gentera-UI-Gentera-UITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -443,6 +545,7 @@
 		};
 		B0BE1A302EE0CA8700BED0D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D048803BFD2D2D46114BA1D /* Pods-Gentera-UI-Gentera-UITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
