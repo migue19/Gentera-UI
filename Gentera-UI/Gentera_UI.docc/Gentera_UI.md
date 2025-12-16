@@ -1,13 +1,41 @@
 # ``Gentera_UI``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+Una librería iOS moderna de componentes UI personalizables para aplicaciones Gentera.
 
 ## Overview
 
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+Gentera-UI proporciona un conjunto completo de componentes UIKit reutilizables y fáciles de personalizar. Todos los componentes están diseñados con accesibilidad, Auto Layout y temas modernos en mente.
+
+## Características Principales
+
+- **Componentes Listos para Usar**: Botones, etiquetas, campos de entrada, vistas de progreso y más
+- **Totalmente Personalizable**: Colores, tamaños, estilos y comportamientos ajustables
+- **Auto Layout**: Todos los componentes usan Auto Layout (sin storyboards)
+- **Accesibilidad**: Compatible con VoiceOver y otras herramientas de accesibilidad
+- **Animaciones**: Efectos visuales suaves e indicadores de carga con Lottie
+
+## Empezar Rápido
+
+- <doc:GettingStarted>
 
 ## Topics
 
-### <!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@-->
+### Controles Básicos
 
-- <!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@-->
+- ``CustomButton``
+- ``CustomLabel``
+
+### Entrada de Datos
+
+- ``CustomTextField``
+- ``OTPView``
+
+### Indicadores de Progreso
+
+- ``CustomProgressView``
+- ``StepView``
+
+### Vistas Especializadas
+
+- ``TermsView``
+- ``ProgressHUDView``

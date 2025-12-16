@@ -15,11 +15,11 @@ public final class ProgressHUDView: UIView {
     private let loaderSize: CGFloat
 
     // MARK: - Inits
-    public convenience init() {
-        self.init(loaderSize: 100, blurStyle: .dark, dimAlpha: 0.2)
+    public convenience init(animationName: String) {
+        self.init(animationName: animationName, loaderSize: 100, blurStyle: .dark, dimAlpha: 0.2)
     }
 
-    public init(animationName: String = "Loader",
+    public init(animationName: String,
                 loaderSize: CGFloat = 100,
                 blurStyle: UIBlurEffect.Style = .dark,
                 dimAlpha: CGFloat = 0.2) {
@@ -32,7 +32,7 @@ public final class ProgressHUDView: UIView {
 
     required init?(coder: NSCoder) {
         self.blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
-        self.loader = LottieAnimationView(name: "Loader")
+        self.loader = LottieAnimationView()
         self.loaderSize = 100
         super.init(coder: coder)
         commonInit(dimAlpha: 0.2)
