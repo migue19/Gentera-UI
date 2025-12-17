@@ -13,6 +13,8 @@ Un campo de texto personalizado con soporte para múltiples tipos y máscaras de
 - **idCard**: Campo de cédula con solo dígitos
 - **date**: Campo de fecha con selector de calendario
 
+![TextField Input](CustomTextField-Input.svg)
+
 ## Ejemplo de Uso
 
 ```swift

@@ -1,0 +1,15 @@
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="100" fill="#f5f5f5"/>
+  
+  <!-- Title -->
+  <text x="150" y="25" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">
+    CustomButton - Secondary
+  </text>
+  
+  <!-- Secondary Button -->
+  <rect x="50" y="45" width="200" height="50" rx="8" fill="none" stroke="#cccccc" stroke-width="2"/>
+  <text x="150" y="77" font-size="16" font-weight="600" text-anchor="middle" fill="#333333">
+    Cancelar
+  </text>
+</svg>

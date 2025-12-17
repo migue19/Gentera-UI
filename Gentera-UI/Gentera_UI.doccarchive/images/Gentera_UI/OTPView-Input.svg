@@ -1,0 +1,30 @@
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="100" fill="#f5f5f5"/>
+  
+  <!-- Title -->
+  <text x="150" y="25" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">
+    OTPView - 6 Dígitos
+  </text>
+  
+  <!-- OTP Boxes -->
+  <!-- Box 1 -->
+  <rect x="20" y="40" width="35" height="40" rx="4" fill="white" stroke="#000000" stroke-width="2"/>
+  <text x="37.5" y="68" font-size="18" font-weight="bold" text-anchor="middle" fill="#000000">1</text>
+  
+  <!-- Box 2 -->
+  <rect x="62" y="40" width="35" height="40" rx="4" fill="white" stroke="#cccccc" stroke-width="1"/>
+  <text x="79.5" y="68" font-size="18" font-weight="bold" text-anchor="middle" fill="#999999">2</text>
+  
+  <!-- Box 3 -->
+  <rect x="104" y="40" width="35" height="40" rx="4" fill="white" stroke="#cccccc" stroke-width="1"/>
+  
+  <!-- Box 4 -->
+  <rect x="146" y="40" width="35" height="40" rx="4" fill="white" stroke="#cccccc" stroke-width="1"/>
+  
+  <!-- Box 5 -->
+  <rect x="188" y="40" width="35" height="40" rx="4" fill="white" stroke="#cccccc" stroke-width="1"/>
+  
+  <!-- Box 6 -->
+  <rect x="230" y="40" width="35" height="40" rx="4" fill="white" stroke="#cccccc" stroke-width="1"/>
+</svg>

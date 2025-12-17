@@ -14,6 +14,8 @@ Utiliza `TermsView` para:
 - Crear formularios con acuerdos legales
 - Términos de servicio y políticas
 
+![Terms Checkbox](TermsView-Checkbox.svg)
+
 ## Ejemplo de Uso
 
 ```swift

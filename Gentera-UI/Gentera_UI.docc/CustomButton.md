@@ -16,8 +16,13 @@ Utiliza `CustomButton` para:
 ## Estilos Disponibles
 
 - **primary**: Botón sólido negro con texto blanco (para acciones principales)
+  ![Primary Button](CustomButton-Primary.svg)
+  
 - **secondary**: Botón con borde gris y texto negro
+  ![Secondary Button](CustomButton-Secondary.svg)
+  
 - **link**: Botón transparente solo con texto (para enlaces)
+  ![Link Button](CustomButton-Link.svg)
 
 ## Ejemplo de Uso
 

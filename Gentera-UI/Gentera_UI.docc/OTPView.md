@@ -14,6 +14,8 @@ Utiliza `OTPView` para:
 - Verificación de email
 - Códigos de confirmación
 
+![OTP Input](OTPView-Input.svg)
+
 ## Ejemplo de Uso
 
 ```swift

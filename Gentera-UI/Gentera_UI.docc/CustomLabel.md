@@ -16,7 +16,9 @@ Utiliza `CustomLabel` para:
 ## Estilos Disponibles
 
 - **title**: Fuente grande (24pt, negrita), texto centrado en negro
+  ![Title Style](CustomLabel-Styles.svg)
 - **subtitle**: Fuente mediana (16pt, regular), texto centrado en gris oscuro
+  ![Subtitle Style](CustomLabel-Styles.svg)
 
 ## Ejemplo de Uso
 

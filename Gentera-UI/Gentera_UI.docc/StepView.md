@@ -14,6 +14,8 @@ Utiliza `StepView` para:
 - Proporcionar contexto de progreso en wizards
 - Flujos de onboarding
 
+![Step Progress](StepView-Progress.svg)
+
 ## Ejemplo de Uso
 
 ```swift

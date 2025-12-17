@@ -13,6 +13,8 @@ Utiliza `CustomProgressView` para:
 - Mostrar completitud de un formulario
 - Indicar progreso de un proceso de varios pasos
 
+![Progress Animated](CustomProgress-Animated.svg)
+
 ## Ejemplo de Uso
 
 ```swift
